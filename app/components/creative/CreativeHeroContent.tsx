@@ -1,7 +1,7 @@
 'use client'
 
 import { gsap } from 'gsap'
-import { Sparkles } from 'lucide-react'
+import { Scale } from 'lucide-react'
 import { useEffect, useRef } from 'react'
 import { motion } from '@/lib/motion'
 import { BackgroundBlobs } from './BackgroundBlobs'
@@ -57,9 +57,9 @@ export function CreativeHeroContent() {
     >
       <BackgroundBlobs />
       <div className="relative z-10 mx-auto grid w-full max-w-[91rem] grid-cols-1 items-center gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:gap-10 xl:gap-16">
-        <section className="mx-auto flex w-full max-w-[38rem] flex-col items-start pt-7 text-left sm:pt-10 lg:mx-0 lg:pt-0">
-          <div className="hero-kicker mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)] shadow-[0_16px_45px_-32px_var(--shadow-strong)] backdrop-blur-xl">
-            <Sparkles className="h-3.5 w-3.5" strokeWidth={1.9} />
+        <section className="mx-auto flex w-full max-w-[38rem] flex-col items-start pt-24 text-left sm:pt-28 lg:mx-0 lg:pt-0">
+          <div className="hero-kicker group mb-6 inline-flex items-center gap-2 rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] px-3.5 py-2 text-xs font-semibold uppercase tracking-[0.18em] text-[var(--text-muted)] shadow-[0_16px_45px_-32px_var(--shadow-strong)] backdrop-blur-xl">
+            <Scale className="h-3.5 w-3.5 text-[var(--text-accent)] opacity-80 transition duration-300 group-hover:rotate-[-4deg] group-hover:opacity-100 group-hover:drop-shadow-[0_0_10px_var(--spotlight-glow)]" strokeWidth={1.8} />
             Praava Legal
           </div>
 

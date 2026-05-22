@@ -39,11 +39,6 @@ body {
   color: var(--card-color);
 }
 
-.dark .floating-card-surface {
-  background: var(--card-dark-bg, var(--card-bg));
-  color: var(--card-dark-color, var(--card-color));
-}
-
 .card-base {
   border: 1px solid color-mix(in srgb, var(--border-subtle) 66%, transparent);
   backdrop-filter: blur(24px);

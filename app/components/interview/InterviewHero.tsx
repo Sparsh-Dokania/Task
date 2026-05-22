@@ -14,6 +14,7 @@ export function InterviewHero() {
   useEffect(() => {
     const root = rootRef.current
     if (!root) return
+    const listenerCleanups: Array<() => void> = []
 
     const context = gsap.context(() => {
       gsap.set(['.reference-heading', '.reference-copy'], {
@@ -61,16 +62,26 @@ export function InterviewHero() {
       })
 
       root.querySelectorAll<HTMLElement>('.reference-card').forEach((card) => {
-        card.addEventListener('pointerenter', () => {
+        const handleEnter = () => {
           gsap.to(card, { y: '-=3', scale: 1.012, duration: motion.hoverIn, ease: motion.ease })
-        })
-        card.addEventListener('pointerleave', () => {
+        }
+        const handleLeave = () => {
           gsap.to(card, { y: 0, scale: 1, duration: motion.hoverOut, ease: motion.ease })
+        }
+
+        card.addEventListener('pointerenter', handleEnter)
+        card.addEventListener('pointerleave', handleLeave)
+        listenerCleanups.push(() => {
+          card.removeEventListener('pointerenter', handleEnter)
+          card.removeEventListener('pointerleave', handleLeave)
         })
       })
     }, root)
 
-    return () => context.revert()
+    return () => {
+      listenerCleanups.forEach((cleanup) => cleanup())
+      context.revert()
+    }
   }, [])
 
   const largeIconClass = 'h-12 w-12 lg:h-14 lg:w-14'

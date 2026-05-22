@@ -1,5 +1,5 @@
 import { InterviewHero } from '@/components/interview/InterviewHero'
 
-export default function Home() {
+export default function ReferencePage() {
   return <InterviewHero />
 }
