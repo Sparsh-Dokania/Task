@@ -16,12 +16,13 @@ const options: Array<{ value: HeroMode; label: string }> = [
 
 export function ModeToggle({ mode, onChange }: ModeToggleProps) {
   const isCreative = mode === 'creative'
+  const thumbTransform = isCreative ? 'translateX(104px)' : 'translateX(0px)'
 
   return (
     <div className="relative grid h-11 w-[212px] grid-cols-2 overflow-hidden rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] p-1 shadow-[0_18px_56px_-34px_var(--shadow-strong)] backdrop-blur-2xl transition-[background,border-color,box-shadow] duration-500 ease-[cubic-bezier(0.22,1,0.36,1)]">
       <span
         className="absolute left-1 top-1 h-9 w-[100px] rounded-full bg-[var(--toggle-thumb)] shadow-[0_12px_28px_-18px_var(--shadow-strong)] transition-transform duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] will-change-transform"
-        style={{ transform: isCreative ? 'translateX(100%)' : 'translateX(0%)' }}
+        style={{ transform: thumbTransform }}
         aria-hidden="true"
       />
       {options.map((option) => (

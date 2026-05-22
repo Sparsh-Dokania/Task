@@ -1,18 +1,15 @@
 'use client'
 
 import Link from 'next/link'
-import { usePathname } from 'next/navigation'
+import { usePathname, useRouter } from 'next/navigation'
 import { Scale } from 'lucide-react'
+import { ModeToggle, type HeroMode } from '@/components/ui/ModeToggle'
 import { ThemeToggle } from '@/components/ui/ThemeToggle'
-import { cn } from '@/lib/utils'
-
-const links = [
-  { href: '/reference', label: 'Reference' },
-  { href: '/creative', label: 'Creative' }
-]
 
 export function SiteNav() {
   const pathname = usePathname()
+  const router = useRouter()
+  const mode: HeroMode = pathname === '/creative' ? 'creative' : 'reference'
 
   return (
     <header className="fixed inset-x-0 top-0 z-50 px-4 pt-4 sm:px-6 sm:pt-6">
@@ -29,26 +26,12 @@ export function SiteNav() {
         </Link>
 
         <div className="flex items-center gap-2">
-          <div className="grid h-11 grid-cols-2 rounded-full border border-[var(--border-subtle)] bg-[var(--surface-glass)] p-1 shadow-[0_18px_56px_-34px_var(--shadow-strong)] backdrop-blur-2xl">
-            {links.map((link) => {
-              const isActive = pathname === link.href
-
-              return (
-                <Link
-                  key={link.href}
-                  href={link.href}
-                  className={cn(
-                    'grid h-9 min-w-[4.7rem] place-items-center rounded-full px-2.5 text-sm font-semibold tracking-normal transition-all duration-500 ease-[cubic-bezier(0.22,1,0.36,1)] focus:outline-none focus-visible:ring-2 focus-visible:ring-[var(--text-accent)]/35 sm:min-w-[5.6rem] sm:px-3',
-                    isActive
-                      ? 'bg-[var(--toggle-thumb)] text-[var(--toggle-thumb-text)] shadow-[0_12px_28px_-18px_var(--shadow-strong)]'
-                      : 'text-[var(--text-secondary)] hover:text-[var(--text-primary)]'
-                  )}
-                >
-                  {link.label}
-                </Link>
-              )
-            })}
-          </div>
+          <ModeToggle
+            mode={mode}
+            onChange={(nextMode) => {
+              router.push(nextMode === 'creative' ? '/creative' : '/reference')
+            }}
+          />
           <ThemeToggle />
         </div>
       </nav>
