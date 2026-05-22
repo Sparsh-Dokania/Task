@@ -78,6 +78,8 @@ export function FloatingScene() {
         icon={<BriefcaseBusiness className="h-4 w-4" strokeWidth={1.9} />}
         bgColor="linear-gradient(135deg, rgba(255,255,255,0.84), rgba(245,248,252,0.68))"
         textColor="rgb(35 44 59)"
+        darkBgColor="linear-gradient(135deg, rgba(255,255,255,0.105), rgba(255,255,255,0.045))"
+        darkTextColor="rgb(239 244 250)"
         rotation={-7}
         shadowColor="rgba(72, 91, 124, 0.55)"
         size="lg"
@@ -90,6 +92,8 @@ export function FloatingScene() {
         icon={<CalendarClock className="h-4 w-4" strokeWidth={1.9} />}
         bgColor="linear-gradient(135deg, rgba(235,243,255,0.88), rgba(255,255,255,0.72))"
         textColor="rgb(38 70 117)"
+        darkBgColor="linear-gradient(135deg, rgba(58,86,135,0.24), rgba(255,255,255,0.055))"
+        darkTextColor="rgb(207 224 255)"
         rotation={5}
         shadowColor="rgba(74, 112, 179, 0.5)"
         size="md"
@@ -102,6 +106,8 @@ export function FloatingScene() {
         icon={<SearchCheck className="h-4 w-4" strokeWidth={1.9} />}
         bgColor="linear-gradient(135deg, rgba(245,240,228,0.9), rgba(255,255,255,0.74))"
         textColor="rgb(96 74 45)"
+        darkBgColor="linear-gradient(135deg, rgba(120,91,55,0.22), rgba(255,255,255,0.052))"
+        darkTextColor="rgb(238 216 187)"
         rotation={-3}
         shadowColor="rgba(153, 115, 67, 0.48)"
         size="lg"
@@ -114,6 +120,8 @@ export function FloatingScene() {
         icon={<FolderKanban className="h-4 w-4" strokeWidth={1.9} />}
         bgColor="linear-gradient(135deg, rgba(239,248,242,0.9), rgba(255,255,255,0.72))"
         textColor="rgb(46 94 71)"
+        darkBgColor="linear-gradient(135deg, rgba(58,111,82,0.22), rgba(255,255,255,0.052))"
+        darkTextColor="rgb(204 238 218)"
         rotation={7}
         shadowColor="rgba(72, 139, 99, 0.45)"
         size="md"
@@ -126,6 +134,8 @@ export function FloatingScene() {
         icon={<Scale className="h-4 w-4" strokeWidth={1.9} />}
         bgColor="linear-gradient(135deg, rgba(250,244,255,0.9), rgba(255,255,255,0.72))"
         textColor="rgb(82 63 111)"
+        darkBgColor="linear-gradient(135deg, rgba(91,70,124,0.24), rgba(255,255,255,0.052))"
+        darkTextColor="rgb(226 211 248)"
         rotation={-8}
         shadowColor="rgba(123, 92, 164, 0.42)"
         size="sm"
@@ -138,6 +148,8 @@ export function FloatingScene() {
         icon={<FileCheck2 className="h-4 w-4" strokeWidth={2} />}
         bgColor="linear-gradient(135deg, rgba(255,255,255,0.92), rgba(240,244,249,0.72))"
         textColor="rgb(31 41 55)"
+        darkBgColor="linear-gradient(135deg, rgba(255,255,255,0.11), rgba(255,255,255,0.048))"
+        darkTextColor="rgb(241 245 249)"
         rotation={4}
         shadowColor="rgba(56, 71, 95, 0.44)"
         size="sm"

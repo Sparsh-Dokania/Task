@@ -44,3 +44,13 @@ body {
 .dark ::selection {
   background: rgba(255, 255, 255, 0.16);
 }
+
+.floating-card-surface {
+  background: var(--card-bg);
+  color: var(--card-color);
+}
+
+.dark .floating-card-surface {
+  background: var(--card-dark-bg, var(--card-bg));
+  color: var(--card-dark-color, var(--card-color));
+}

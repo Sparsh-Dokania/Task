@@ -10,6 +10,8 @@ type FloatingCardProps = {
   icon: ReactNode
   bgColor: string
   textColor: string
+  darkBgColor?: string
+  darkTextColor?: string
   rotation: number
   shadowColor: string
   size?: 'sm' | 'md' | 'lg'
@@ -29,6 +31,8 @@ export function FloatingCard({
   icon,
   bgColor,
   textColor,
+  darkBgColor,
+  darkTextColor,
   rotation,
   shadowColor,
   size = 'md',
@@ -58,7 +62,7 @@ export function FloatingCard({
   const handleEnter = () => {
     if (!floatRef.current) return
     gsap.to(floatRef.current, {
-      scale: 1.035,
+          scale: 1.035,
       duration: 0.35,
       ease: 'power3.out'
     })
@@ -85,13 +89,16 @@ export function FloatingCard({
         onPointerLeave={handleLeave}
         className={cn(
           'flex transform-gpu select-none items-center rounded-full border border-white/72 bg-white/72 font-semibold tracking-[-0.01em] shadow-premium backdrop-blur-2xl transition-[box-shadow,filter] duration-300 hover:shadow-[0_28px_82px_-34px_var(--shadow-color)] dark:border-white/10 dark:bg-white/[0.075] dark:shadow-premium-dark',
+          'floating-card-surface',
           sizeClasses[size]
         )}
         style={
           {
             '--shadow-color': shadowColor,
-            background: bgColor,
-            color: textColor
+            '--card-bg': bgColor,
+            '--card-color': textColor,
+            '--card-dark-bg': darkBgColor,
+            '--card-dark-color': darkTextColor
           } as React.CSSProperties
         }
       >
