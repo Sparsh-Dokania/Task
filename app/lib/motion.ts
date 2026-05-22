@@ -1,10 +1,10 @@
 export const motion = {
-  ease: 'power3.out',
-  revealDuration: 0.78,
-  stagger: 0.075,
-  hoverIn: 0.28,
-  hoverOut: 0.34,
-  floatSlow: 6.1,
-  floatMid: 5.35,
-  parallaxDuration: 0.65
+  ease: 'power2.out',
+  revealDuration: 0.95,
+  stagger: 0.09,
+  hoverIn: 0.34,
+  hoverOut: 0.42,
+  floatSlow: 7.4,
+  floatMid: 6.45,
+  parallaxDuration: 0.78
 } as const

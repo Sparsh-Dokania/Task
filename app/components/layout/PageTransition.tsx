@@ -16,8 +16,8 @@ export function PageTransition({ children }: { children: ReactNode }) {
     const context = gsap.context(() => {
       gsap.fromTo(
         container,
-        { autoAlpha: 0, y: 10, filter: 'blur(10px)' },
-        { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.52, ease: motion.ease }
+        { autoAlpha: 0, y: 8, filter: 'blur(8px)' },
+        { autoAlpha: 1, y: 0, filter: 'blur(0px)', duration: 0.72, ease: motion.ease }
       )
     }, container)
 
